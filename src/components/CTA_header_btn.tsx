@@ -36,7 +36,7 @@ export const AnimatedCTAButton:React.FC<AnimatedCTAButtonProps> = ({ buttonLeft,
           onClick={buttonLeft}
         >
           <div className="flex items-center justify-between w-full">
-            <motion.div className='overflow-hidden text-nowrap text-normal2 font-semibold mx-auto' style={{ color: 'var(--tt-color-text-gray)' }}
+            <motion.div className='overflow-hidden text-nowrap text-normal2 font-semibold mx-auto'
 							animate={{
 								width: hoveredButton === 'right' ? "0%" : "100%",
 								borderTopLeftRadius: hoveredButton === 'left' ? "8px" : "0px",

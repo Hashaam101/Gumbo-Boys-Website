@@ -93,14 +93,14 @@ const Reviews = () => {
 
                 <div className='z-10'>
                     <ThemeButton
-                        text="Give Us a Review"
+                        text="Give us a review"
                         textClassname="pr-[8px] pl-[14px]"
-                        textColor="text-grey"
-                        className="bg-white border-2 hover:border-2 hover:bg-white"
-                        iconBgColor="bg-black/5"
-                        iconBgHoverColor="bg-primary-dark/10"
-                        iconColor="text-primary"
-                        iconHoverColor="text-primary-dark"
+                        textColor="text-white"
+                        className="bg-[#111] border-[#111] hover:border-[#111] hover:bg-[#111]/90 backdrop-blur-[5.7px]"
+                        iconBgColor="bg-primary"
+                        iconBgHoverColor="bg-primary-dark"
+                        iconColor="text-white"
+                        iconHoverColor="text-white"
                         onClick={() => setShowPopup(true)}
                     />
                 </div>

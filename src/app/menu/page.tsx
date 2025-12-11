@@ -35,6 +35,7 @@ const MenuPage = React.memo(function MenuPage() {
     };
   }, [measureHeights]);
 
+
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -51,10 +52,10 @@ const MenuPage = React.memo(function MenuPage() {
       {/* hero section */}
       <div id="MenuHero" className="h-[320px] sm:h-[380px] md:h-[420px] w-full overflow-hidden rounded-[36px] relative">
         <div className="px-[20px] pb-8 sm:px-[40px] h-full flex flex-col items-start justify-end gap-2.5 bg-black/55 backdrop-blur-[13px]">
-          <div className="text-[var(--tt-color-text-gray)] text-normal1 sm:text-normal2 sm:font-bold border-l-3 border-primary-dark pl-[20px]">
+          <div className="text-normal1 sm:text-normal2 sm:font-bold border-l-3 border-primary-dark pl-[20px]">
             Explore Our Full Menu
           </div>
-          <div className="text-[var(--tt-color-text-gray)] font-creato-black font-semibold text-[32px] sm:text-h2  sm:font-medium leading-[1.2]">
+          <div className="text-[32px] sm:text-h2 sm:font-medium leading-[1.2]" style={{fontFamily: 'var(--font-southern-barn)'}}>
             Crispy, fresh, and full of island flavor.
             <br />
             Find your new favorite today.
@@ -80,10 +81,10 @@ const MenuPage = React.memo(function MenuPage() {
         </div>
       </div>
 
-      <div className="h-[60px]" />
+      {/* <div className="h-[60px]" />
 
       <div id="Menu" className="w-full flex items-center justify-center text-center flex-col">
-        <div className="text-h3 sm:text-h2 text-[var(--tt-color-text-gray)] w-full">
+        <div className="text-h3 sm:text-h2 w-full">
           Our Menu
         </div>
         <div className="text-normal mt-[12px] max-w-[900px] mx-auto" style={{ color: 'var(--tt-color-text-gray)' }}>
@@ -94,7 +95,7 @@ const MenuPage = React.memo(function MenuPage() {
       <div className="h-[40px]" />
 
       {/* Products Grid */}
-      <div className="w-full">
+      {/* <div className="w-full">
         <div
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center"
           ref={gridRef}
@@ -107,11 +108,38 @@ const MenuPage = React.memo(function MenuPage() {
               />
             ))}
         </div>
-      </div>
+      </div> */}
 
       <div className="h-[80px]" />
 
+      {/* Order Now Section */}
+      <div id="OrderNow" className="w-full flex items-center justify-center text-center flex-col">
+        <div className="text-h3 sm:text-h2 w-full">
+          Order Now
+        </div>
+        <div className="text-normal mt-[12px] max-w-[900px] mx-auto" style={{ color: 'var(--tt-color-text-gray)' }}>
+          From crispy classics to refreshing drinks and sweet treats, here’s everything we’re serving.
+        </div>
+      </div>
 
+      <div className="h-[40px]" />
+
+      {/* Order iframe */}
+      <div className="w-full rounded-[36px] overflow-hidden bg-[#0d0d0d]">
+        <iframe
+          src="https://www.food-order.net/index.php/web_orders/home/S1BLQ0FH?uid=667592c917cdc"
+          id="outer_frame"
+          width="100%"
+          style={{
+            height: '900px',
+            filter: 'invert(1) hue-rotate(182deg)',
+          }}
+          allow="payment"
+          className="border-0"
+        />
+      </div>
+
+      <div className="h-[80px]" />
 
       <Footer scrollToSection={scrollToSection} />
     </div>

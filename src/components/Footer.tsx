@@ -3,11 +3,11 @@ import Image from "next/image";
 import Logo from "@/assets/Images/Logo.png";
 
 const Footer = ({ scrollToSection }: { scrollToSection?: (sectionId: string) => void }) => (
-    <footer className="w-full px-[10px] md:px-[50px] lg:px-[70px] pb-[20px] sm:pb-[10px]" style={{ background: 'var(--tt-bg-color)', color: 'var(--tt-color-text-gray)' }}>
+    <footer className="w-full px-[10px] md:px-[50px] lg:px-[70px] pb-[20px] sm:pb-[10px]" style={{ background: 'var(--tt-bg-color)'}}>
         <div className="text-h3 sm:text-h2 w-full">
             Grill Shack
         </div>
-        <div className="mb-[32px] mx-2 text-normal2">
+        <div className="mb-[32px] mx-2 text-normal2" style={{ color: 'var(--tt-color-text-gray)' }}>
             Enjoy crispy, island-style fried chicken made fresh daily in the heart of Waikiki. From quick bites to catering, Grill Shack brings flavor and aloha to every meal.
         </div>
         <div className="container mx-auto">
@@ -134,7 +134,7 @@ const Footer = ({ scrollToSection }: { scrollToSection?: (sectionId: string) => 
         </div>
         <div className="h-[60px]" />
         {/* Bottom Bar */}
-        <div className="bg-primary rounded-full text-white w-[90%] mx-auto min-h-[37px] py-[10px] sm:px-[50px] md:px-[100px] ">
+        <div className="bg-primary-dark rounded-full text-white w-[90%] mx-auto min-h-[37px] py-[10px] sm:px-[50px] md:px-[100px] ">
             <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-center text-normal4 gap-[20px]">
                 <p className="hidden sm:block">
                     Grill Shack Inc. 2025 All Rights Reserved
