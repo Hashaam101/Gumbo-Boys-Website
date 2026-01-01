@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import { Product } from '../data/products';
 import FavoriteStarIcon from './FavoriteStarIcon';
@@ -25,6 +25,27 @@ const MenuProductCard: React.FC<MenuProductCardProps> = ({ product }) => {
     setIsFavorited(newFavoritedState);
     localStorage.setItem(`favorite_${product.id}`, JSON.stringify(newFavoritedState));
   };
+
+  const priceEntries = useMemo(() => {
+    const p: any = product.prices;
+    if (!p) return [];
+    // If prices is an array of { tag1, tag2 } keep compatible shape
+    if (Array.isArray(p)) {
+      return p.map((item: any, i: number) => ({
+        key: item.tag1 ?? String(i),
+        label: item.tag1 ?? `P${i}`,
+        value: typeof item.tag2 === 'number' ? item.tag2 : Number(item.tag2) || 0,
+      }));
+    }
+    // If prices is an object like { small: number, medium: number, large: number }
+    return Object.entries(p).map(([k, v]) => ({
+      key: k,
+      label: k,
+      value: typeof v === 'number' ? v : Number(v) || 0,
+    }));
+  }, [product.prices]);
+
+  const otherPrices = priceEntries.filter((e) => e.key !== 'small');
 
   return (
     <div
@@ -56,25 +77,25 @@ const MenuProductCard: React.FC<MenuProductCardProps> = ({ product }) => {
             </button>
           </div>
           <div className="flex flex-wrap gap-[5px] items-center relative shrink-0">
-            {product.price && (
+            {product.prices?.small != null && (
               <p className="font-[var(--default-font-family)] leading-[normal] not-italic relative text-[14px] text-[color:var(--color-primary-dark)]">
-                S ${product.price.toFixed(2)}
+                S ${product.prices.small.toFixed(2)}
               </p>
             )}
-            {product.price && product.prices && (
+            {product.prices && otherPrices.length > 0 && (
               <div className="relative shrink-0 size-[4px]">
                 <div className="absolute inset-0 bg-white/25 rounded-full"></div>
               </div>
             )}
-            {product.prices && product.prices.map((price, index) => (
-              <React.Fragment key={index}>
+            {otherPrices.map((price, index) => (
+              <React.Fragment key={price.key}>
                 {index > 0 && (
                   <div className="relative shrink-0 size-[4px]">
                     <div className="absolute inset-0 bg-white/25 rounded-full"></div>
                   </div>
                 )}
                 <p className="font-[var(--default-font-family)] leading-[normal] not-italic relative text-[14px] text-[color:var(--color-primary-dark)]">
-                  {price.tag1} ${price.tag2.toFixed(2)}
+                  {price.label} ${price.value.toFixed(2)}
                 </p>
               </React.Fragment>
             ))}
