@@ -4,7 +4,6 @@ import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MediaPreloader from "@/components/MediaPreloader";
-import Hero from "@/../public/Images/hero.png";
 import ThemeButton from "@/components/ThemeBtn";
 import MenuSection from "@/components/MenuSection";
 import InstagramComponent from "@/components/InstagramComponent";
@@ -49,7 +48,7 @@ const Home = React.memo(function Home() {
         />
         {/* Hero background image - Desktop */}
         <img
-          src={typeof Hero === "string" ? Hero : (Hero.src ?? "")}
+          src="/Images/hero.png"
           alt="Home Page Image"
           className="hidden sm:block absolute pt-4 mr-[-10px] right-0 h-[125%] -z-10"
         />
