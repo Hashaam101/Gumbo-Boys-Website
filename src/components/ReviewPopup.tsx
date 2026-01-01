@@ -61,7 +61,7 @@ const ReviewPopup: React.FC<ReviewPopupProps> = ({ onClose, onSubmit }) => {
       const cleaned = phone.replace(/[^\d+]/g, '');
       const startsWithPlus44 = cleaned.startsWith('+44');
       const digits = cleaned.replace(/[^\d]/g, '');
-      
+
       // UK numbers: 10 digits without country code, or 11 with 0, or 12 with +44
       if (startsWithPlus44) {
         if (digits.length !== 12) {
@@ -74,7 +74,7 @@ const ReviewPopup: React.FC<ReviewPopupProps> = ({ onClose, onSubmit }) => {
           return;
         }
       }
-      
+
       // Check for multiple + signs or + not at start
       if ((phone.match(/\+/g) || []).length > 1 || (phone.includes('+') && phone[0] !== '+')) {
         setPhoneError('Please enter a valid UK phone number (e.g., +44 7XXX XXXXXX or 07XXX XXXXXX).');
@@ -101,7 +101,7 @@ const ReviewPopup: React.FC<ReviewPopupProps> = ({ onClose, onSubmit }) => {
         phoneToSend = "'" + phoneToSend;
       }
       formData.append('phone', phoneToSend);
-  fetch(GOOGLE_SHEETS_WEBAPP_URL, {
+      fetch(GOOGLE_SHEETS_WEBAPP_URL, {
         method: 'POST',
         body: formData
       });
@@ -151,8 +151,8 @@ const ReviewPopup: React.FC<ReviewPopupProps> = ({ onClose, onSubmit }) => {
           100% { stroke-dashoffset: 0; }
         }
       `}</style>
-  <div className="bg-white rounded-xl py-8 px-6 w-full max-w-md shadow-lg relative flex flex-col justify-center">
-  <button className="absolute top-4 right-4 text-gray-500 hover:text-black" style={{top: '1rem', right: '1rem'}} onClick={onClose}>&times;</button>
+      <div className="bg-white rounded-xl py-8 px-6 w-full max-w-md shadow-lg relative flex flex-col justify-center">
+        <button className="absolute top-4 right-4 text-gray-500 hover:text-black" style={{ top: '1rem', right: '1rem' }} onClick={onClose}>&times;</button>
         {showGooglePrompt ? (
           <div className="flex flex-col items-center justify-center min-h-[200px]">
             <div className="text-lg font-bold mb-2 text-center text-primary-dark">Please give us a review on Google!</div>
@@ -162,8 +162,8 @@ const ReviewPopup: React.FC<ReviewPopupProps> = ({ onClose, onSubmit }) => {
           <div className="flex flex-col items-center justify-center min-h-[200px]">
             <div className="svg-container">
               <svg className="ft-green-tick" xmlns="http://www.w3.org/2000/svg" height="100" width="100" viewBox="0 0 48 48" aria-hidden="true">
-                <circle className="circle" fill="var(--primary-dark, #b91c1c)" cx="24" cy="24" r="22"/>
-                <path className="tick" fill="none" stroke="#FFF" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M14 27l5.917 4.917L34 17"/>
+                <circle className="circle" fill="var(--primary-dark, #b91c1c)" cx="24" cy="24" r="22" />
+                <path className="tick" fill="none" stroke="#FFF" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M14 27l5.917 4.917L34 17" />
               </svg>
             </div>
             <div className="text-lg font-bold mt-4 text-center text-gray-900">Sending your feedback...</div>
@@ -172,8 +172,8 @@ const ReviewPopup: React.FC<ReviewPopupProps> = ({ onClose, onSubmit }) => {
           <div className="flex flex-col items-center justify-center min-h-[200px]">
             <div className="svg-container">
               <svg className="ft-green-tick" xmlns="http://www.w3.org/2000/svg" height="100" width="100" viewBox="0 0 48 48" aria-hidden="true">
-                <circle className="circle" fill="var(--primary-dark, #b91c1c)" cx="24" cy="24" r="22"/>
-                <path className="tick" fill="none" stroke="#FFF" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M14 27l5.917 4.917L34 17"/>
+                <circle className="circle" fill="var(--primary-dark, #b91c1c)" cx="24" cy="24" r="22" />
+                <path className="tick" fill="none" stroke="#FFF" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M14 27l5.917 4.917L34 17" />
               </svg>
             </div>
             <div className="text-lg font-bold mt-4 text-center text-green-700">Sent!</div>
@@ -182,8 +182,8 @@ const ReviewPopup: React.FC<ReviewPopupProps> = ({ onClose, onSubmit }) => {
           <div className="flex flex-col items-center justify-center min-h-[200px]">
             {rating && rating < 4 ? (
               <>
-                <div className="text-lg font-bold mb-2 text-center text-gray-900">We're sorry for your experience.</div>
-                <div className="text-gray-800 text-center mb-4">Thank you for your feedback. We'll use it to improve our service.</div>
+                <div className="text-lg font-bold mb-2 text-center text-gray-900">We&apos;re sorry for your experience.</div>
+                <div className="text-gray-800 text-center mb-4">Thank you for your feedback. We&apos;ll use it to improve our service.</div>
               </>
             ) : (
               <>
@@ -197,14 +197,13 @@ const ReviewPopup: React.FC<ReviewPopupProps> = ({ onClose, onSubmit }) => {
           <>
             <div className="text-lg font-bold mb-4 text-center text-gray-900">How would you rate us?</div>
             <div className="flex justify-center mb-4">
-              {[1,2,3,4,5].map(star => (
+              {[1, 2, 3, 4, 5].map(star => (
                 <button
                   key={star}
-                  className={`text-3xl mx-1 transition-colors duration-150 ${
-                    (hoveredStar !== null ? star <= hoveredStar : rating && star <= rating)
+                  className={`text-3xl mx-1 transition-colors duration-150 ${(hoveredStar !== null ? star <= hoveredStar : rating && star <= rating)
                       ? 'text-yellow-400'
                       : 'text-gray-300'
-                  }`}
+                    }`}
                   onClick={() => handleStarClick(star)}
                   onMouseEnter={() => setHoveredStar(star)}
                   onMouseLeave={() => setHoveredStar(null)}
@@ -218,7 +217,7 @@ const ReviewPopup: React.FC<ReviewPopupProps> = ({ onClose, onSubmit }) => {
           </>
         ) : (
           <>
-            <div className="text-lg font-bold mb-4 text-center text-gray-900">We'd love your feedback</div>
+            <div className="text-lg font-bold mb-4 text-center text-gray-900">We&apos;d love your feedback</div>
             <textarea
               className="w-full border border-gray-300 rounded p-2 mb-1 text-gray-900 placeholder-gray-400"
               rows={3}

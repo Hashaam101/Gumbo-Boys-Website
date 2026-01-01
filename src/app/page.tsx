@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MediaPreloader from "@/components/MediaPreloader";
@@ -38,15 +39,17 @@ const Home = React.memo(function Home() {
 
       <div className="sm:h-[20px]" />
 
-  {/* hero img section */}
-  <div id="Home" className="h-[500px] sm:h-[500px] w-full relative flex flex-row items-center">
+      {/* hero img section */}
+      <div id="Home" className="h-[500px] sm:h-[500px] w-full relative flex flex-row items-center">
         {/* Hero background image - Mobile */}
-        <img
+        <Image
           src="/Images/featuring/Section1.png"
           alt="Home Page Image Mobile"
-          className="absolute inset-0 w-full h-full object-cover -z-10 sm:hidden rounded-[24px]"
+          fill
+          className="object-cover -z-10 sm:hidden rounded-[24px]"
         />
         {/* Hero background image - Desktop */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/Images/hero.png"
           alt="Home Page Image"
@@ -56,7 +59,7 @@ const Home = React.memo(function Home() {
           <div className="text-normal1 sm:text-normal2 sm:font-bold border-l-3 border-primary-dark pl-[20px]">
             Serving the Best Fried Chicken in Waikiki
           </div>
-          <div className="text-[32px] sm:text-h2 lg:text-h1 sm:font-medium leading-[1.2]" style={{fontFamily: 'var(--font-southern-barn)'}}>
+          <div className="text-[32px] sm:text-h2 lg:text-h1 sm:font-medium leading-[1.2]" style={{ fontFamily: 'var(--font-southern-barn)' }}>
             Savor the Best
             <br />
             Fast Food in
@@ -67,7 +70,7 @@ const Home = React.memo(function Home() {
             <br />
           </div>
         </div>
-      </div>  
+      </div>
 
       <div className="h-[100px]" />
 
@@ -108,7 +111,7 @@ const Home = React.memo(function Home() {
       {/* Menu Section */}
 
       <div>
-        <MenuSection/>
+        <MenuSection />
       </div>
 
 

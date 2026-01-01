@@ -22,7 +22,9 @@ export default function ProductCard({ product, measureHeights }: Props) {
       <div className="flex flex-col flex-1 px-4 pt-4 pb-4">
         <div className="flex items-start justify-between">
           <div className="font-bold text-[18px] leading-tight" style={{ color: 'var(--tt-card-bg-color)' }}>{product.name}</div>
-          <div className="font-bold text-[18px]">$ {product.price}</div>
+          <div className="font-bold text-[18px]">
+            {product.prices?.[0] ? `$ ${product.prices[0].tag2}` : null}
+          </div>
         </div>
         <div className="mt-2 text-sm" style={{ color: '#d0c6bb' }}>{product.description}</div>
       </div>

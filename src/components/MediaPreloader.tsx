@@ -87,12 +87,13 @@ const MediaPreloader: React.FC<MediaPreloaderProps> = ({
         if (onLoaded) onLoaded();
       }
     }
-  }, [src, type, onLoaded, loaded]);
+  }, [src, type, onLoaded, loaded, forcePreloader]);
 
   return (
-  <div className={`absolute inset-0 flex items-center justify-center ${className}`} style={{ ...style, borderRadius }}>
+    <div className={`absolute inset-0 flex items-center justify-center ${className}`} style={{ ...style, borderRadius }}>
       {/* Always render the image/video so load event fires */}
       {type === "image" ? (
+        /* eslint-disable-next-line @next/next/no-img-element */
         <img
           ref={imgRef}
           src={src}
@@ -115,8 +116,8 @@ const MediaPreloader: React.FC<MediaPreloaderProps> = ({
           {children}
         </video>
       )}
-  {/* Overlay spinner only if not loaded, or if forcePreloader is on */}
-  {(!loaded || forcePreloader) && !error && (
+      {/* Overlay spinner only if not loaded, or if forcePreloader is on */}
+      {(!loaded || forcePreloader) && !error && (
         <div className="absolute inset-0 flex items-center justify-center z-10" style={{ borderRadius }}>
           {/* Solid grey background */}
           <div className="absolute inset-0 bg-[#c0c0c0] w-full h-full" style={{ borderRadius }} />

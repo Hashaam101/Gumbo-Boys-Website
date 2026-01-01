@@ -11,17 +11,24 @@ interface MenuSectionProps {
 }
 
 const MenuSection: React.FC<MenuSectionProps> = ({ limit }) => {
-  const categories = Array.from(new Set(products.map(p => p.category)));
-  const [selectedCategory, setSelectedCategory] = useState<string>('');
+  const categories = React.useMemo(() => Array.from(new Set(products.map(p => p.category))), []);
+  const [selectedCategory, setSelectedCategory] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      const savedCategory = localStorage.getItem('selectedCategory');
+      if (savedCategory && categories.includes(savedCategory)) {
+        return savedCategory;
+      }
+    }
+    // Return empty string if categories is empty (though unlikely given usage), logic handles fallback to categories[0] if needed later or here?
+    // The original logic was: categories[0] if not saved.
+    return categories[0] || '';
+  });
 
   useEffect(() => {
-    const savedCategory = localStorage.getItem('selectedCategory');
-    if (savedCategory && categories.includes(savedCategory)) {
-      setSelectedCategory(savedCategory);
-    } else {
-      setSelectedCategory(categories[0]);
+    if (selectedCategory) {
+      localStorage.setItem('selectedCategory', selectedCategory);
     }
-  }, []);
+  }, [selectedCategory]);
 
   useEffect(() => {
     if (selectedCategory) {

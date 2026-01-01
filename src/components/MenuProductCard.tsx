@@ -9,16 +9,15 @@ interface MenuProductCardProps {
 }
 
 const MenuProductCard: React.FC<MenuProductCardProps> = ({ product }) => {
-  const [isFavorited, setIsFavorited] = useState(false);
-
-  useEffect(() => {
-    const storedValue = localStorage.getItem(`favorite_${product.id}`);
-    if (storedValue) {
-      setIsFavorited(JSON.parse(storedValue));
-    } else {
-      setIsFavorited(product.starred || false);
+  const [isFavorited, setIsFavorited] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const storedValue = localStorage.getItem(`favorite_${product.id}`);
+      if (storedValue) {
+        return JSON.parse(storedValue);
+      }
     }
-  }, [product.id, product.starred]);
+    return product.starred || false;
+  });
 
   const handleFavoriteClick = () => {
     const newFavoritedState = !isFavorited;
@@ -75,7 +74,7 @@ const MenuProductCard: React.FC<MenuProductCardProps> = ({ product }) => {
             <button onClick={handleFavoriteClick} className="relative shrink-0 size-[20px] text-[var(--color-primary-dark)]">
               <FavoriteStarIcon filled={isFavorited} className="size-full" />
             </button>
-{/* Removed invalid product.price access */}
+            {/* Removed invalid product.price access */}
             {/* Removed invalid product.prices.small access */}
             {product.prices && otherPrices.length > 0 && (
               <div className="relative shrink-0 size-[4px]">

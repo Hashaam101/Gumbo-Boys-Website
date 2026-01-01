@@ -7,10 +7,10 @@ import Image from 'next/image';
 import { AnimatedMenuButton } from './Menu_Header_btn';
 import { usePathname, useRouter } from 'next/navigation';
 
-function Header( {onClick} : {onClick: () => void}) {
+function Header({ onClick }: { onClick: () => void }) {
 
   const router = useRouter();
-  const pathname = usePathname(); 
+  const pathname = usePathname();
 
   const scrollToSection = (sectionId: string) => {
     const attemptScroll = () => {
@@ -31,7 +31,7 @@ function Header( {onClick} : {onClick: () => void}) {
         router.push('/');
       } catch (e) {
         // push may throw in some environments; log and continue
-        // eslint-disable-next-line no-console
+        // push may throw in some environments; log and continue
         console.warn('router.push failed:', e);
       }
       setTimeout(attemptScroll, 100);
@@ -44,32 +44,32 @@ function Header( {onClick} : {onClick: () => void}) {
 
   return (
     <div className="p-[20px] w-full">
-      
+
       <div className={`w-full grid grid-cols-2 md:grid-cols-3 items-center`}>
         {/* Left Section */}
         <div className="hidden md:flex justify-start">
-      <AnimatedMenuButton
-        menuItems={[
-          { name: "Menu", onclick: () => { router.push('/menu'); } },
-          { name: "Reviews", onclick: () => { scrollToSection('Reviews') } },
-          { name: "Featuring", onclick: () => { scrollToSection('Featuring') } },
-          { name: "FAQ's", onclick: () => { scrollToSection("FAQ's") } },
-          { name: "Location", onclick: () => { scrollToSection('Location') } }
-        ]}
-      />           
+          <AnimatedMenuButton
+            menuItems={[
+              { name: "Menu", onclick: () => { router.push('/menu'); } },
+              { name: "Reviews", onclick: () => { scrollToSection('Reviews') } },
+              { name: "Featuring", onclick: () => { scrollToSection('Featuring') } },
+              { name: "FAQ's", onclick: () => { scrollToSection("FAQ's") } },
+              { name: "Location", onclick: () => { scrollToSection('Location') } }
+            ]}
+          />
         </div>
 
         {/* Center Section (Always Centered) */}
         <div className={`flex justify-start md:justify-center`}>
-            <div
+          <div
             className="relative text-white cursor-pointer"
             onClick={() => { router.push('/'); }}
-            >
+          >
             <span
               className="absolute inset-0 rounded-full border-[0.5px]"
               style={{
-              borderColor: "rgba(0,0,0,0.15)",
-              pointerEvents: "none",
+                borderColor: "rgba(0,0,0,0.15)",
+                pointerEvents: "none",
               }}
             />
             <Image
@@ -80,15 +80,15 @@ function Header( {onClick} : {onClick: () => void}) {
               className="object-cover rounded-full"
               priority
             />
-            </div>
+          </div>
         </div>
 
         {/* Right Section */}
         <div className="flex justify-end w-full">
-            <AnimatedCTAButton 
-              buttonLeft={() => { router.push("tel:+1(843)-478-8609") }}
-              buttonRight={() => { router.push('/menu'); }}
-            />
+          <AnimatedCTAButton
+            buttonLeft={() => { router.push("tel:+1(843)-478-8609") }}
+            buttonRight={() => { router.push('/menu'); }}
+          />
         </div>
       </div>
     </div>
