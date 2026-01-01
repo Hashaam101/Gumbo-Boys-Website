@@ -75,13 +75,8 @@ const MenuProductCard: React.FC<MenuProductCardProps> = ({ product }) => {
             <button onClick={handleFavoriteClick} className="relative shrink-0 size-[20px] text-[var(--color-primary-dark)]">
               <FavoriteStarIcon filled={isFavorited} className="size-full" />
             </button>
-          </div>
-          <div className="flex flex-wrap gap-[5px] items-center relative shrink-0">
-            {product.prices?.small != null && (
-              <p className="font-[var(--default-font-family)] leading-[normal] not-italic relative text-[14px] text-[color:var(--color-primary-dark)]">
-                S ${product.prices.small.toFixed(2)}
-              </p>
-            )}
+{/* Removed invalid product.price access */}
+            {/* Removed invalid product.prices.small access */}
             {product.prices && otherPrices.length > 0 && (
               <div className="relative shrink-0 size-[4px]">
                 <div className="absolute inset-0 bg-white/25 rounded-full"></div>
