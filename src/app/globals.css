@@ -1,10 +1,10 @@
 /* Custom pointer cursor for .cursor-custom-pointer */
 .cursor-custom-pointer {
-  cursor: url('/Cursor/Squad%20Busters%20Chicken%20Animated--pointer--SweezyCursors..cur'), pointer !important;
+  cursor: pointer !important;
 }
 /* Force custom pointer cursor for all .cursor-pointer elements */
 .cursor-pointer {
-  cursor: url('/Cursor/Squad%20Busters%20Chicken%20Animated--pointer--SweezyCursors..cur'), pointer !important;
+  cursor: pointer !important;
 }
 /* Force custom pointer cursor for Instagram section interactive elements */
 .InstagramGrid *:hover,
@@ -15,7 +15,7 @@
 .InstagramGrid button,
 .InstagramGrid input[type="button"],
 .InstagramGrid input[type="submit"] {
-  cursor: url('/Cursor/Squad%20Busters%20Chicken%20Animated--pointer--SweezyCursors..cur'), pointer !important;
+  cursor: pointer !important;
 }
 @import "tailwindcss";
 
@@ -116,7 +116,7 @@
   a:active, button:active, [role="button"]:active, input[type="submit"]:active, input[type="button"]:active,
   a:focus, button:focus, [role="button"]:focus, input[type="submit"]:focus, input[type="button"]:focus,
   a::after, a::before, button::after, button::before {
-    cursor: url('/Cursor/Squad%20Busters%20Chicken%20Animated--pointer--SweezyCursors..cur'), pointer !important;
+    cursor: pointer;
   }
 }
 

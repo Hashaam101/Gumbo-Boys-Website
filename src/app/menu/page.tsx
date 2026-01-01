@@ -22,7 +22,7 @@ const MenuPage = React.memo(function MenuPage() {
 
   return (
     <div className="p-[10px]">
-      <Header onClick={() => {}} />
+      <Header onClick={() => { }} />
 
       <div className="sm:h-[20px]" />
 
@@ -32,7 +32,7 @@ const MenuPage = React.memo(function MenuPage() {
           <div className="text-normal1 sm:text-normal2 sm:font-bold border-l-3 border-primary-dark pl-[20px]">
             Explore Our Full Menu
           </div>
-          <div className="text-[32px] sm:text-h2 sm:font-medium leading-[1.2]" style={{fontFamily: 'var(--font-southern-barn)'}}>
+          <div className="text-[32px] sm:text-h2 sm:font-medium leading-[1.2]" style={{ fontFamily: 'var(--font-southern-barn)' }}>
             Crispy, fresh, and full of island flavor.
             <br />
             Find your new favorite today.
@@ -74,9 +74,9 @@ const MenuPage = React.memo(function MenuPage() {
         </div>
       </div>
 
-      <div className="h-[40px]" />
+      {/* <div className="h-[40px]" />
 
-      {/* Order iframe */}
+      Change: Order iframe
       <div className="w-full rounded-[36px] overflow-hidden bg-[#0d0d0d]">
         <iframe
           src="https://www.food-order.net/index.php/web_orders/home/S1BLQ0FH?uid=667592c917cdc"
@@ -93,7 +93,7 @@ const MenuPage = React.memo(function MenuPage() {
 
       <div className="h-[80px]" />
 
-      <Footer scrollToSection={scrollToSection} />
+      <Footer scrollToSection={scrollToSection} /> */}
     </div>
   );
 });
