@@ -38,7 +38,7 @@ const MenuPage = React.memo(function MenuPage() {
             Find your new favorite today.
           </div>
           <MediaPreloader
-            src="/Images/hero.webp"
+            src="/Images/hero_mobile.png"
             alt="Menu Page Image"
             className="absolute top-0 left-0 w-full h-full object-cover rounded-[36px] -z-10"
             onLoaded={() => setHeroLoaded(true)}
@@ -62,20 +62,21 @@ const MenuPage = React.memo(function MenuPage() {
 
       <MenuSection />
 
-      <div className="h-[80px]" />
+      {/* <div className="h-[80px]" /> */}
 
+      {/*  
       {/* Order Now Section */}
-      <div id="OrderNow" className="w-full flex items-center justify-center text-center flex-col">
+      {/* <div id="OrderNow" className="w-full flex items-center justify-center text-center flex-col">
         <div className="text-h3 sm:text-h2 w-full">
           Order Now
         </div>
         <div className="text-normal mt-[12px] max-w-[900px] mx-auto" style={{ color: 'var(--tt-color-text-gray)' }}>
           From crispy classics to refreshing drinks and sweet treats, here’s everything we’re serving.
         </div>
-      </div>
+      </div> */}
 
       {/* <div className="h-[40px]" />
-
+      {/* 
       Change: Order iframe
       <div className="w-full rounded-[36px] overflow-hidden bg-[#0d0d0d]">
         <iframe
@@ -91,9 +92,9 @@ const MenuPage = React.memo(function MenuPage() {
         />
       </div>
 
+      */}
       <div className="h-[80px]" />
-
-      <Footer scrollToSection={scrollToSection} /> */}
+      <Footer scrollToSection={scrollToSection} />
     </div>
   );
 });
