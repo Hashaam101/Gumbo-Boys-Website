@@ -24,6 +24,9 @@ const CustomPrevArrow = (props: any) => {
 		<button
 			style={{
 				...style,
+				position: "absolute",
+				top: "50%",
+				transform: "translateY(-50%)",
 				display: "flex",
 				justifyContent: "center",
 				alignItems: "center",
@@ -64,6 +67,9 @@ const CustomNextArrow = (props: any) => {
 		<button
 			style={{
 				...style,
+				position: "absolute",
+				top: "50%",
+				transform: "translateY(-50%)",
 				display: "flex",
 				justifyContent: "center",
 				alignItems: "center",
@@ -158,80 +164,6 @@ const InstagramCarousel: React.FC<InstagramGridProps> = ({ posts }) => {
 			observerRef.current?.disconnect();
 		};
 	}, [handleVisibility]);
-
-	const CustomPrevArrow = (props: any) => {
-		const { className, style, onClick } = props;
-		return (
-			<button
-				className={className}
-				style={{
-					...style,
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-					background: "#D31919",
-					borderRadius: "50%",
-					width: "40px",
-					height: "40px",
-					zIndex: 10,
-					left: "-15px",
-					boxShadow: "0 2px 4px rgba(0,0,0,0.2)"
-				}}
-				onClick={onClick}
-			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="24"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="white"
-					strokeWidth="2"
-					strokeLinecap="round"
-					strokeLinejoin="round"
-				>
-					<polyline points="15 18 9 12 15 6"></polyline>
-				</svg>
-			</button>
-		);
-	};
-
-	const CustomNextArrow = (props: any) => {
-		const { className, style, onClick } = props;
-		return (
-			<button
-				className={className}
-				style={{
-					...style,
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-					background: "#D31919",
-					borderRadius: "50%",
-					width: "40px",
-					height: "40px",
-					zIndex: 10,
-					right: "-15px",
-					boxShadow: "0 2px 4px rgba(0,0,0,0.2)"
-				}}
-				onClick={onClick}
-			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="24"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="white"
-					strokeWidth="2"
-					strokeLinecap="round"
-					strokeLinejoin="round"
-				>
-					<polyline points="9 18 15 12 9 6"></polyline>
-				</svg>
-			</button>
-		);
-	};
 
 	const defaultSliderSettings = {
 		infinite: posts.length > 1,
