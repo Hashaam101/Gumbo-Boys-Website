@@ -6,7 +6,7 @@ import FeaturingStarIcon from './FeaturingStarIcon';
 import FeaturedDishSection from './FeaturedDishSection';
 
 // Animation variants for framer-motion
-const sectionVariants = {
+const sectionVariants: any = {
   hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
