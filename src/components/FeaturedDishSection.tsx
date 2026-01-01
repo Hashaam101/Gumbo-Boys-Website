@@ -91,7 +91,7 @@ const FeaturedDishSection: React.FC<FeaturedDishSectionProps> = ({
         <motion.div
             ref={sectionRef}
             className={`mt-16 md:mt-[100px] px-4 lg:px-[80px] ${containerClass}`}
-            initial="hidden"
+            initial="visible"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={sectionVariants}

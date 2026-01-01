@@ -10,7 +10,7 @@ const normalizedBase = rawBase ? (rawBase.startsWith("/") ? rawBase : `/${rawBas
 const nextConfig: NextConfig = {
   output: 'export',
   images: {
-    domains: ['lh3.googleusercontent.com', 'waikiki-chicken-paradise.vercel.app'],
+    domains: ['lh3.googleusercontent.com', 'gumbo-boys.vercel.app'],
     unoptimized: true,
   },
   trailingSlash: true,

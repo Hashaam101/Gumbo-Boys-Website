@@ -90,7 +90,7 @@ const Footer = ({ scrollToSection }: { scrollToSection?: (sectionId: string) => 
                                         +1 (213) 910-2980
                                     </a>
                                     <a
-                                        href="mailto:info@grillshack.co.uk"
+                                        href="mailto:info@gumboboys.com"
                                         className="hover:text-primary hover:underline cursor-pointer transition-colors"
                                     >
                                         info@gumboboys.com

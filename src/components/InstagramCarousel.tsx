@@ -17,6 +17,86 @@ interface InstagramGridProps {
 	posts: InstagramPost[];
 }
 
+const CustomPrevArrow = (props: any) => {
+	const { className, style, onClick } = props;
+	const disabled = className?.includes("slick-disabled");
+	return (
+		<button
+			style={{
+				...style,
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
+				background: "#D31919",
+				borderRadius: "50%",
+				width: "40px",
+				height: "40px",
+				zIndex: 10,
+				left: "-15px",
+				boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+				opacity: disabled ? 0.5 : 1,
+				cursor: disabled ? "default" : "pointer",
+			}}
+			onClick={onClick}
+			disabled={disabled}
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="white"
+				strokeWidth="2"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			>
+				<polyline points="15 18 9 12 15 6"></polyline>
+			</svg>
+		</button>
+	);
+};
+
+const CustomNextArrow = (props: any) => {
+	const { className, style, onClick } = props;
+	const disabled = className?.includes("slick-disabled");
+	return (
+		<button
+			style={{
+				...style,
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
+				background: "#D31919",
+				borderRadius: "50%",
+				width: "40px",
+				height: "40px",
+				zIndex: 10,
+				right: "-15px",
+				boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+				opacity: disabled ? 0.5 : 1,
+				cursor: disabled ? "default" : "pointer",
+			}}
+			onClick={onClick}
+			disabled={disabled}
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="white"
+				strokeWidth="2"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			>
+				<polyline points="9 18 15 12 9 6"></polyline>
+			</svg>
+		</button>
+	);
+};
+
 const InstagramCarousel: React.FC<InstagramGridProps> = ({ posts }) => {
 	const [slideHeight, setSlideHeight] = useState<number>(340);
 	const [currentSlide, setCurrentSlide] = useState(0);
@@ -79,6 +159,80 @@ const InstagramCarousel: React.FC<InstagramGridProps> = ({ posts }) => {
 		};
 	}, [handleVisibility]);
 
+	const CustomPrevArrow = (props: any) => {
+		const { className, style, onClick } = props;
+		return (
+			<button
+				className={className}
+				style={{
+					...style,
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					background: "#D31919",
+					borderRadius: "50%",
+					width: "40px",
+					height: "40px",
+					zIndex: 10,
+					left: "-15px",
+					boxShadow: "0 2px 4px rgba(0,0,0,0.2)"
+				}}
+				onClick={onClick}
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="white"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				>
+					<polyline points="15 18 9 12 15 6"></polyline>
+				</svg>
+			</button>
+		);
+	};
+
+	const CustomNextArrow = (props: any) => {
+		const { className, style, onClick } = props;
+		return (
+			<button
+				className={className}
+				style={{
+					...style,
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					background: "#D31919",
+					borderRadius: "50%",
+					width: "40px",
+					height: "40px",
+					zIndex: 10,
+					right: "-15px",
+					boxShadow: "0 2px 4px rgba(0,0,0,0.2)"
+				}}
+				onClick={onClick}
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="white"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				>
+					<polyline points="9 18 15 12 9 6"></polyline>
+				</svg>
+			</button>
+		);
+	};
+
 	const defaultSliderSettings = {
 		infinite: posts.length > 1,
 		dots: true,
@@ -86,6 +240,8 @@ const InstagramCarousel: React.FC<InstagramGridProps> = ({ posts }) => {
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		arrows: true,
+		nextArrow: <CustomNextArrow />,
+		prevArrow: <CustomPrevArrow />,
 		beforeChange: (_: number, next: number) => setCurrentSlide(next),
 		responsive: [
 			{
@@ -170,49 +326,6 @@ const InstagramCarousel: React.FC<InstagramGridProps> = ({ posts }) => {
 				))}
 			</Slider>
 			<style jsx global>{`
-				.slick-prev,
-				.slick-next {
-					z-index: 1;
-					height: 40px;
-					width: 40px;
-				}
-				.slick-prev:before,
-				.slick-next:before {
-					font-size: 30px;
-					color: #b00c13;
-					opacity: 0.5;
-				}
-				.slick-prev:hover:before,
-				.slick-next:hover:before {
-					opacity: 1;
-				}
-				.slick-prev {
-					left: -15px;
-				}
-				.slick-next {
-					right: -15px;
-				}
-
-				@media (max-width: 770px) {
-					.slick-prev {
-						display: hidden;
-					}
-
-					.slick-next {
-						display: hidden;
-					}
-				}
-
-				@media (max-width: 720px) {
-					.slick-prev {
-						left: -15px;
-					}
-
-					.slick-next {
-						right: -15px;
-					}
-				}
-
 				.slick-dots {
 					bottom: -50px;
 					color: #fff;
@@ -272,49 +385,49 @@ const InstagramPostCard: React.FC<{ post: InstagramPost; height?: number }> = ({
 	if (!post.image) return null;
 
 	return (
-		   <div
-			   className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer bg-white border border-gray-500"
-			   onClick={() => window.open(post.url, "_blank")}
-			   style={{
-				   maxWidth: "420px",
-				   minWidth: "260px",
-				   width: "100%",
-				   height: height ? `${height}px` : "320px",
-			   }}
-		   >
-			   {/* Image Container */}
-			   <div className="relative overflow-hidden w-full h-full">
-				   <MediaPreloader
-					   src={post.image}
-					   alt={post.title}
-					   borderRadius="0.5rem"
-					   className="w-full h-full object-cover"
-				   />
-				   {/* Overlay Content */}
-				   <div
-					   className="absolute bottom-0 left-0 right-0 z-30 px-3 py-2"
-					   style={{
-						   background: "linear-gradient(0deg, rgba(0,0,0,0.75) 80%, rgba(0,0,0,0.2) 100%, rgba(0,0,0,0) 100%)",
-						   color: "#fff",
-					   }}
-				   >
-					   <div className="flex justify-between items-center w-full mb-1">
-						   {post.title ? (
-							   <span className="text-base font-bold truncate pr-2">{post.title}</span>
-						   ) : (
-							   <span className="inline-block bg-gray-300 rounded w-24 h-5 animate-pulse" />
-						   )}
-						   <InstagramIcon />
-					   </div>
-					   {post.description ? (
-						   <div className="text-xs leading-tight line-clamp-2">
-							   <PostDescription description={post.description} />
-						   </div>
-					   ) : (
-						   <span className="block bg-gray-400 rounded w-full animate-pulse" />
-					   )}
-				   </div>
-			   </div>
-		   </div>
+		<div
+			className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer bg-white border border-gray-500"
+			onClick={() => window.open(post.url, "_blank")}
+			style={{
+				maxWidth: "420px",
+				minWidth: "260px",
+				width: "100%",
+				height: height ? `${height}px` : "320px",
+			}}
+		>
+			{/* Image Container */}
+			<div className="relative overflow-hidden w-full h-full">
+				<MediaPreloader
+					src={post.image}
+					alt={post.title}
+					borderRadius="0.5rem"
+					className="w-full h-full object-cover"
+				/>
+				{/* Overlay Content */}
+				<div
+					className="absolute bottom-0 left-0 right-0 z-30 px-3 py-2"
+					style={{
+						background: "linear-gradient(0deg, rgba(0,0,0,0.75) 80%, rgba(0,0,0,0.2) 100%, rgba(0,0,0,0) 100%)",
+						color: "#fff",
+					}}
+				>
+					<div className="flex justify-between items-center w-full mb-1">
+						{post.title ? (
+							<span className="text-base font-bold truncate pr-2">{post.title}</span>
+						) : (
+							<span className="inline-block bg-gray-300 rounded w-24 h-5 animate-pulse" />
+						)}
+						<InstagramIcon />
+					</div>
+					{post.description ? (
+						<div className="text-xs leading-tight line-clamp-2">
+							<PostDescription description={post.description} />
+						</div>
+					) : (
+						<span className="block bg-gray-400 rounded w-full animate-pulse" />
+					)}
+				</div>
+			</div>
+		</div>
 	);
 };

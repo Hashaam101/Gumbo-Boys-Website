@@ -11,7 +11,11 @@ interface MenuSectionProps {
 }
 
 const MenuSection: React.FC<MenuSectionProps> = ({ limit }) => {
-  const categories = React.useMemo(() => Array.from(new Set(products.map(p => p.category))), []);
+  const categories = React.useMemo(() => {
+    const all = Array.from(new Set(products.map(p => p.category)));
+    const priority = "Po-boys";
+    return all.includes(priority) ? [priority, ...all.filter(c => c !== priority)] : all;
+  }, []);
   const [selectedCategory, setSelectedCategory] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       const savedCategory = localStorage.getItem('selectedCategory');

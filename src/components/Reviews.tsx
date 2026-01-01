@@ -32,12 +32,18 @@ const Reviews = () => {
             }}
         >
             <div className="absolute h-full w-full bg-primary-dark -z-20">
-                {/* <Image
-            src={pattern}
-            alt="bg pattern"
-            fill
-            className="object-cover -z-20 opacity-50"
-        /> */}
+                <div
+                    className="absolute inset-0 w-full h-full opacity-10"
+                    style={{
+                        backgroundImage: `
+                            url('/Svgs/Fleur-de-lis-filled.svg'), 
+                            url('/Svgs/Fleur-de-lis-filled.svg')
+                        `,
+                        backgroundRepeat: 'repeat',
+                        backgroundSize: '120px 120px',
+                        backgroundPosition: '0 0, 60px 60px',
+                    }}
+                />
             </div>
 
             <div className='py-[46px] px-[15px] sm:py-[76px] sm:px-[52px]'
@@ -59,7 +65,7 @@ const Reviews = () => {
                         className="sm:text-normal1 md:text-h5 w-full text-center font-medium mt-[20px]"
                         style={{ color: 'color-mix(in oklab, var(--color-white) 50%, transparent)' }}
                     >
-                        Here are some reviews from our <a href='https://maps.app.goo.gl/1PtPGhkGc5cPMqbm9' target='_blank' rel='noopener noreferrer' className='hover:underline'>Google Maps!</a>
+                        Here are some reviews from our <a href='https://maps.app.goo.gl/1PtPGhkGc5cPMqbm9' target='_blank' rel='noopener noreferrer' className='hover:underline font-bold text-white/80'>Google Maps</a>!
                     </div>
                 </div>
 
@@ -67,7 +73,7 @@ const Reviews = () => {
 
                     <ReviewCard
                         starCount={5}
-                        reviewText="As a Lousiana girl I can’t wait to try more of what they offer. Red beans and rice slapped and really hit the spot but tbh the etouffee was mid. Was more of a soup than a gravy but perhaps on a different day it’s better? Had lots of crawfish though which I appreciated. Not really a place to sit and eat at but will definitely be ordering more takeout from here!"
+                        reviewText="As a Lousiana girl I can’t wait to try more of what they offer. Red beans and rice slapped and really hit the spot.. "
                         reviewerName="Alicia Phillips"
                         redirect='#'
                         profileImage="https://lh3.googleusercontent.com/a/ACg8ocJ2aaQFht3Pf9g7ZQ0FoK5LUNUIHKjetjsRZRaJ6mmkCkepWA=s64-c-rp-mo-br100"
@@ -75,7 +81,7 @@ const Reviews = () => {
 
                     <ReviewCard
                         starCount={5}
-                        reviewText="As a first time customer, I knew this spot was fire when many customers made line to order. Small spot in DTLA, but enough outdoor seating to wait while the chefs are busy at their craft. The food was hot and great! I had so many sauces to choose from to dip my food. I definitely left the Huss puppies til the end. 10/10 service and worth the wait. Next time I'm ordering Gumbo!"
+                        reviewText="As a first time customer, I knew this spot was fire when many customers made line to order. Small spot in DTLA, but enough outdoor seating to wait while the chefs are busy at their craft."
                         reviewerName="Diamond Doom"
                         redirect="#"
                         profileImage="https://lh3.googleusercontent.com/a-/ALV-UjU9_NwtsgqsVEkxm-UU3As7RjVnVWJ38Gm2UJjKK3nHoN6WzPh3=s64-c-rp-mo-br100"

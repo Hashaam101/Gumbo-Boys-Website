@@ -70,7 +70,7 @@ const InstagramComponent = () => {
 			title: "gumboboys",
 			image: "/Images/insta/4.jpg",
 			url: "https://www.instagram.com/p/CpDOeqrrC-u/",
-			description: "“Sissy’s Sauce” -House Remoulade made fresh daily.We use it to pair with all of our fried items. We also use it on all of our Po’boys.It goes good on pretty much everything. We wouldn’t judge if you even took a lil sip out the bottle‼️",
+			description: "“House Sauce” -House Remoulade made fresh daily.We use it to pair with all of our fried items. We also use it on all of our Po’boys.It goes good on pretty much everything. We wouldn’t judge if you even took a lil sip out the bottle‼️",
 		},
 		{
 			id: "5",

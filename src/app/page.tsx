@@ -44,7 +44,7 @@ const Home = React.memo(function Home() {
       <div id="Home" className="h-[500px] sm:h-[500px] w-full relative flex flex-row items-center">
         {/* Hero background image - Mobile */}
         <Image
-          src="/Images/featuring/Section1.png"
+          src="/Images/hero_mobile.png"
           alt="Home Page Image Mobile"
           fill
           className="object-cover -z-10 sm:hidden rounded-[24px]"
@@ -58,14 +58,14 @@ const Home = React.memo(function Home() {
         />
         <div className="text-left pl-2 sm:pl-[60px] pb-8 flex flex-col items-start justify-center gap-2.5 relative z-10">
           <div className="text-normal1 sm:text-normal2 sm:font-bold border-l-3 border-primary-dark pl-[20px]">
-            Serving the Best Fried Chicken in Waikiki
+            Serving the Best Gumbo & Po&apos;boys in DTLA
           </div>
-          <div className="text-[32px] sm:text-h2 lg:text-h1 sm:font-medium leading-[1.2]" style={{ fontFamily: 'var(--font-southern-barn)' }}>
+          <div className="text-[32px] sm:text-h2 lg:text-h1 sm:font-medium leading-[1.2]" style={{ fontFamily: 'var(--font-rye)' }}>
             Savor the Best
             <br />
-            Fast Food in
+            Cajun & Creole in
             <br />
-            West Drayton –
+            DTLA –
             <br />
             Authentic and Flavorful!
             <br />
@@ -81,7 +81,7 @@ const Home = React.memo(function Home() {
           Try our most popular items
         </div>
         <div className="text-normal mt-[20px]" style={{ color: 'var(--tt-color-text-gray)' }}>
-          Treat yourself to our must-try dishes that everyone in Honolulu is talking about.
+          Treat yourself to our must-try dishes that everyone in DTLA is talking about.
         </div>
         <div className="mt-[20px] gap-[20px] flex flex-col sm:flex-row items-center justify-center">
           <ThemeButton

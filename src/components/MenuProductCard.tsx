@@ -58,44 +58,41 @@ const MenuProductCard: React.FC<MenuProductCardProps> = ({ product }) => {
         <Image
           src={product.image}
           alt={product.name}
-          layout="fill"
-          objectFit="cover"
-          className="absolute"
+          fill
+          className="object-cover absolute"
         />
       </div>
       <div
         className="bg-[var(--color-black)] border border-[rgba(255,255,255,0.03)] border-solid flex flex-col gap-[10px] items-start mb-[-12px] pb-[16px] pt-[12px] px-[16px] relative rounded-[12px] shrink-0 w-full"
       >
         <div className="flex flex-col gap-[2px] items-start relative shrink-0 w-full">
-          <div className="flex items-center justify-between gap-x-2 relative shrink-0 w-full">
-            <p className="flex-grow min-w-0 font-[var(--font-creato-black)] font-semibold tracking-[0.04em] leading-[normal] not-italic text-[18px] sm:text-[22px] text-[color:var(--white)]">
+          {/* Row 1: Name and Star */}
+          <div className="flex items-start justify-between w-full">
+            <h3 className="font-[var(--font-creato-black)] font-semibold tracking-[0.04em] text-[18px] sm:text-[22px] text-white pr-2">
               {product.name}
-            </p>
-            <button onClick={handleFavoriteClick} className="relative shrink-0 size-[20px] text-[var(--color-primary-dark)]">
+            </h3>
+            <button onClick={handleFavoriteClick} className="relative shrink-0 size-[20px] text-[var(--color-primary-dark)] mt-1">
               <FavoriteStarIcon filled={isFavorited} className="size-full" />
             </button>
-            {/* Removed invalid product.price access */}
-            {/* Removed invalid product.prices.small access */}
-            {product.prices && otherPrices.length > 0 && (
-              <div className="relative shrink-0 size-[4px]">
-                <div className="absolute inset-0 bg-white/25 rounded-full"></div>
-              </div>
-            )}
-            {otherPrices.map((price, index) => (
+          </div>
+
+          {/* Row 2: Prices */}
+          <div className="flex flex-wrap items-center gap-x-2 mt-1 w-full">
+            {priceEntries.map((price, index) => (
               <React.Fragment key={price.key}>
                 {index > 0 && (
-                  <div className="relative shrink-0 size-[4px]">
-                    <div className="absolute inset-0 bg-white/25 rounded-full"></div>
-                  </div>
+                  <span className="text-[var(--color-primary-dark)] text-[12px]">•</span>
                 )}
-                <p className="font-[var(--default-font-family)] leading-[normal] not-italic relative text-[14px] text-[color:var(--color-primary-dark)]">
+                <p className="font-[var(--default-font-family)] text-[14px] text-[var(--color-primary-dark)]">
                   {price.label} ${price.value.toFixed(2)}
                 </p>
               </React.Fragment>
             ))}
           </div>
-          <div className="flex items-center relative shrink-0 w-full">
-            <p className="flex-[1_0_0] font-[var(--default-font-family)] leading-[normal] min-h-px min-w-px not-italic text-[14px] text-[color:var(--tt-color-text-gray)]/80 whitespace-pre-wrap tracking-[0.02em]">
+
+          {/* Row 3: Description */}
+          <div className="mt-2 w-full">
+            <p className="font-[var(--default-font-family)] text-[14px] text-[var(--tt-color-text-gray)]/80 leading-snug">
               {product.description}
             </p>
           </div>
