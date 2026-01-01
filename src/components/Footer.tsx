@@ -8,7 +8,7 @@ const Footer = ({ scrollToSection }: { scrollToSection?: (sectionId: string) => 
             Gumbo Boys
         </div>
         <div className="mb-[32px] mx-2 text-normal2" style={{ color: 'var(--tt-color-text-gray)' }}>
-            Authentic New Orleans Flavor in the Heart of DTLA. Bringing the Gulf Coast to the West Coast with soulful Gumbo and Po'boys.
+            Authentic New Orleans Flavor in the Heart of DTLA. Bringing the Gulf Coast to the West Coast with soulful Gumbo and Po&apos;boys.
         </div>
         <div className="container mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 min-h-[100px] lg:grid-cols-3 gap-[10px] lg:gap-8">
