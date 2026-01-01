@@ -59,7 +59,7 @@ const Reviews = () => {
                         className="sm:text-normal1 md:text-h5 w-full text-center font-medium mt-[20px]"
                         style={{ color: 'color-mix(in oklab, var(--color-white) 50%, transparent)' }}
                     >
-                            Here are some reviews from our <a href='https://maps.app.goo.gl/1PtPGhkGc5cPMqbm9' target='_blank' rel='noopener noreferrer' className='hover:underline'>Google Maps!</a>
+                        Here are some reviews from our <a href='https://maps.app.goo.gl/1PtPGhkGc5cPMqbm9' target='_blank' rel='noopener noreferrer' className='hover:underline'>Google Maps!</a>
                     </div>
                 </div>
 
@@ -67,25 +67,25 @@ const Reviews = () => {
 
                     <ReviewCard
                         starCount={5}
-                        reviewText="Found this place through tiktok and honestly one of the best boxes i’ve ever had. mint sauce was phenomenal, meat was clean and so was all the other food. would personally say that the hot wings were better than the lemon. can’t say anything bad about this place and the owner was lovely. will come again."
-                        reviewerName="Jasmina Ali"
-                        redirect='https://share.google/FwksR0ig96JNu6ECO'
+                        reviewText="As a Lousiana girl I can’t wait to try more of what they offer. Red beans and rice slapped and really hit the spot but tbh the etouffee was mid. Was more of a soup than a gravy but perhaps on a different day it’s better? Had lots of crawfish though which I appreciated. Not really a place to sit and eat at but will definitely be ordering more takeout from here!"
+                        reviewerName="Alicia Phillips"
+                        redirect='#'
                         profileImage="https://lh3.googleusercontent.com/a/ACg8ocJ2aaQFht3Pf9g7ZQ0FoK5LUNUIHKjetjsRZRaJ6mmkCkepWA=s64-c-rp-mo-br100"
                     />
 
                     <ReviewCard
                         starCount={5}
-                        reviewText="The food was absolutely incredible—probably the best burger I’ve ever had! The staff were not only kind but also genuinely amazing, which made the whole experience even better."
-                        reviewerName="Hudheifa Anverdeen"
-                        redirect="https://share.google/LaGRkcgzRKXrpdsr2"
+                        reviewText="As a first time customer, I knew this spot was fire when many customers made line to order. Small spot in DTLA, but enough outdoor seating to wait while the chefs are busy at their craft. The food was hot and great! I had so many sauces to choose from to dip my food. I definitely left the Huss puppies til the end. 10/10 service and worth the wait. Next time I'm ordering Gumbo!"
+                        reviewerName="Diamond Doom"
+                        redirect="#"
                         profileImage="https://lh3.googleusercontent.com/a-/ALV-UjU9_NwtsgqsVEkxm-UU3As7RjVnVWJ38Gm2UJjKK3nHoN6WzPh3=s64-c-rp-mo-br100"
                     />
 
                     <ReviewCard
                         starCount={5}
-                        reviewText="I ordered the Smash Doner Box for myself earlier on today and It was certainly worth the hype. Will come back to order another time. 10/10 On the Food."
-                        reviewerName="Daz Ahmed"
-                        redirect='https://share.google/pOgOE8Kc1tHPPJ64a'
+                        reviewText="The prices are reasonable and the food is well seasoned. I feel like I am at home in Louisiana. Portions are big as well. I highly recommend this place."
+                        reviewerName="Marr"
+                        redirect='#'
                         profileImage="https://lh3.googleusercontent.com/a-/ALV-UjWkiplcIP5BtPY9mzaDr9xIUnEYhxdQanjIzelTcU_CdFQOSTU=s64-c-rp-mo-br100"
                     />
 

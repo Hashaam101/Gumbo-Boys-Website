@@ -30,11 +30,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ limit }) => {
     }
   }, [selectedCategory]);
 
-  useEffect(() => {
-    if (selectedCategory) {
-      localStorage.setItem('selectedCategory', selectedCategory);
-    }
-  }, [selectedCategory]);
+
 
   const handleCategoryClick = (category: string) => {
     setSelectedCategory(category);

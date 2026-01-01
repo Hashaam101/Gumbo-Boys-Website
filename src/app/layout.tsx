@@ -16,27 +16,27 @@ const geistMono = Geist_Mono({
 
 // --- METADATA STAYS HERE ---
 export const metadata: Metadata = {
-  metadataBase: new URL("https://waikikichickeninparadise.com"),
-  title: "Grill Shack | Best Fried Chicken Waikiki Beach",
-  description: "Serving the Best Fried Chicken in Waikiki. Fresh, juicy chicken and island flavors just steps from Waikiki Beach! Try our most popular items and see why everyone in Honolulu is talking about us.",
+  metadataBase: new URL("https://gumboboys.com"),
+  title: "Gumbo Boys | Authentic Cajun & Creole in DTLA",
+  description: "Authentic New Orleans Flavor in the Heart of DTLA. Serving the most authentic, soul-warming Gumbo and Po'boys in California.",
   keywords: [
-    "fried chicken", "waikiki chicken", "fish and chips", "food truck waikiki", "Restaurant" , "fast food waikiki", "best fried chicken honolulu", "crispy chicken sandwich", "loaded fries", "hawaiian flavors", "dine-in", "take away", "reservations", "waikiki beach", "honolulu food truck"
+    "gumbo", "po-boys", "cajun", "creole", "los angeles", "dtla", "food delivery", "uber eats", "seafood platter", "fried alligator", "new orleans food"
   ],
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: "Grill Shack | Best Fried Chicken Waikiki Beach",
-    description: "Serving the Best Fried Chicken in Waikiki. Fresh, juicy chicken and island flavors just steps from Waikiki Beach! Try our most popular items and see why everyone in Honolulu is talking about us.",
-    url: "https://waikikichickeninparadise.com/",
-    siteName: "Grill Shack",
+    title: "Gumbo Boys | Authentic Cajun & Creole in DTLA",
+    description: "Authentic New Orleans Flavor in the Heart of DTLA. Serving the most authentic, soul-warming Gumbo and Po'boys in California.",
+    url: "https://gumboboys.com/",
+    siteName: "Gumbo Boys",
     images: [
       {
         url: "/Images/Logo.png",
         width: 400,
         height: 400,
-        alt: "Grill Shack Logo"
+        alt: "Gumbo Boys Logo"
       }
     ],
     locale: "en_US",
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "https://waikikichickeninparadise.com/",
-    title: "Grill Shack | Fried Chicken | Fish & Chips | Fast Food | Food Truck Waikiki",
-    description: "Serving the Best Fried Chicken in Waikiki. Fresh, juicy chicken and island flavors just steps from Waikiki Beach! Try our most popular items and see why everyone in Honolulu is talking about us.",
+    site: "https://gumboboys.com/",
+    title: "Gumbo Boys | Authentic Cajun & Creole in DTLA",
+    description: "Authentic New Orleans Flavor in the Heart of DTLA. Serving the most authentic, soul-warming Gumbo and Po'boys in California.",
     images: ["/Images/Logo.png"]
   }
 };
@@ -62,7 +62,7 @@ export default function RootLayout({
 
 
   return (
-  <html lang="en" className="dark">
+    <html lang="en" className="dark">
       <head>
 
       </head>

@@ -4,36 +4,36 @@ const FAQSection = () => {
   // Sample FAQ data
   const faqItems = [
     {
-      question: "Where is Grill Shack located?",
-      answer: "Our food truck is conveniently situated near Waikiki Beach, offering easy access for beachgoers and tourists."
+      question: "Where is Gumbo Boys located?",
+      answer: "We are located at 648 S Main St in the heart of Downtown Los Angeles (DTLA)."
     },
     {
       question: "What are your operating hours?",
-      answer: "We are open daily from 11:00 AM to 9:00 PM, 7 days a week, serving delicious meals throughout the day."
+      answer: "We open daily at 11:00 AM. We close at 10:00 PM Sunday through Thursday, and stay open late until 12:00 AM on Fridays and Saturdays."
     },
     {
-      question: "Is your food truck wheelchair accessible?",
-      answer: "Yes, our setup is designed to accommodate all guests, including those with mobility challenges."
+      question: "Do you have options for delivery?",
+      answer: "Yes! We specialize in delivery via Uber Eats to Downtown LA, Glendale, and surrounding areas."
     },
     {
-      question: "Can I place an order for delivery?",
-      answer: "Nope, as of right now, we don't have delivery services."
+      question: "Do you have dine-in seating?",
+      answer: "We offer casual dine-in seating and host frequent pop-up events and block parties."
     },
     {
-      question: "Is parking available near your location?",
-      answer: "Plenty of paid parking spots available, but we recommend walking and enjoying the beautiful Hawaiian sun on your way to see us!"
+      question: "What is your signature dish?",
+      answer: "Our 'Sweep The Kitchen Gumbo' is a must-try! It's loaded with shrimp, sausage, chicken, okra, and authentic spices."
     },
     {
       question: "Do you accept credit or debit cards?",
       answer: "Yes, we accept all major credit and debit cards for your convenience."
     },
     {
-      question: "Are your ingredients locally sourced?",
-      answer: "We source as many ingredients as possible from the local Hawaiian community."
+      question: "Are your ingredients authentic?",
+      answer: "Absolutely. We bring the flavors of the Gulf Coast to you, using traditional recipes and key ingredients sourced for authenticity."
     },
     {
       question: "Do you offer catering services for events?",
-      answer: "Contact us at +18434788609"
+      answer: "Contact us at +1 213-910-2980"
     },
     {
       question: "Can I make a reservation?",

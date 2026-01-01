@@ -5,10 +5,10 @@ import Logo from "@/assets/Images/Logo.png";
 const Footer = ({ scrollToSection }: { scrollToSection?: (sectionId: string) => void }) => (
     <footer className="w-full px-[10px] md:px-[50px] lg:px-[70px] pb-[20px] sm:pb-[10px]" style={{ background: 'var(--tt-bg-color)' }}>
         <div className="text-h3 sm:text-h2 w-full">
-            Grill Shack
+            Gumbo Boys
         </div>
         <div className="mb-[32px] mx-2 text-normal2" style={{ color: 'var(--tt-color-text-gray)' }}>
-            Enjoy crispy, island-style fried chicken made fresh daily in the heart of Waikiki. From quick bites to catering, Grill Shack brings flavor and aloha to every meal.
+            Authentic New Orleans Flavor in the Heart of DTLA. Bringing the Gulf Coast to the West Coast with soulful Gumbo and Po'boys.
         </div>
         <div className="container mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 min-h-[100px] lg:grid-cols-3 gap-[10px] lg:gap-8">
@@ -16,14 +16,14 @@ const Footer = ({ scrollToSection }: { scrollToSection?: (sectionId: string) => 
                 <div className="col-span-2 lg:col-span-1 mx-auto flex flex-row items-center lg:items-start gap-4">
                     <Image
                         src={Logo}
-                        alt="Grill Shack Logo"
+                        alt="Gumbo Boys Logo"
                         width={100}
                         height={100}
                         className="object-contain w-auto h-[200px] md:h-[230px] aspect-square rounded-full"
                     />
                     <div className="flex h-[120px] justify-evenly gap-[10px] flex-col my-auto max-w-100">
                         <a
-                            href="https://www.instagram.com/grilll_shack"
+                            href="https://www.instagram.com/gumboboys"
                             aria-label="Instagram"
                             className="min-w-[100px] p-2 py-4 h-full w-full items-center justify-center flex rounded-lg group transition-all"
                             style={{ background: 'color-mix(in oklab, var(--color-white) 5%, transparent)' }}
@@ -63,7 +63,7 @@ const Footer = ({ scrollToSection }: { scrollToSection?: (sectionId: string) => 
                             </svg>
                         </a>
                         <a
-                            href="https://www.tiktok.com/@grill_shack"
+                            href="https://www.tiktok.com/@gumboboys"
                             aria-label="TikTok"
                             className="p-2 py-4 h-full w-full items-center justify-center flex rounded-lg group transition-all"
                             style={{ background: 'color-mix(in oklab, var(--color-white) 5%, transparent)' }}
@@ -84,16 +84,16 @@ const Footer = ({ scrollToSection }: { scrollToSection?: (sectionId: string) => 
                             <div className="text-normal4 text-[var(--tt-color-text-gray)]">
                                 <div className="flex flex-col items-center">
                                     <a
-                                        href="tel:+441895913672"
+                                        href="tel:+12139102980"
                                         className="mb-[10px] hover:text-primary hover:underline cursor-pointer transition-colors"
                                     >
-                                        +44 1895 913672
+                                        +1 (213) 910-2980
                                     </a>
                                     <a
                                         href="mailto:info@grillshack.co.uk"
                                         className="hover:text-primary hover:underline cursor-pointer transition-colors"
                                     >
-                                        info@grillshack.co.uk
+                                        info@gumboboys.com
                                     </a>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@ const Footer = ({ scrollToSection }: { scrollToSection?: (sectionId: string) => 
         <div className="bg-primary-dark rounded-full text-white w-[90%] mx-auto min-h-[37px] py-[10px] sm:px-[50px] md:px-[100px] ">
             <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-center text-normal4 gap-[20px]">
                 <p className="hidden sm:block">
-                    Grill Shack Inc. 2025 All Rights Reserved
+                    Gumbo Boys Inc. 2025 All Rights Reserved
                 </p>
                 <p className="text-nowrap">
                     Made with <a target="_blank" href="http://tableturnerr.com" className="hover:underline cursor-pointer"><u>TableTurnerr.com</u></a>
@@ -145,7 +145,7 @@ const Footer = ({ scrollToSection }: { scrollToSection?: (sectionId: string) => 
             </div>
         </div>
         <div className="block sm:hidden w-full text-center text-[10px] mt-2">
-            Grill Shack Inc. 2025 All Rights Reserved
+            Gumbo Boys Inc. 2025 All Rights Reserved
         </div>
     </footer>
 );

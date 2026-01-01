@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";

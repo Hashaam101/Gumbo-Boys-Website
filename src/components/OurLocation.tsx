@@ -8,34 +8,35 @@ import React from 'react';
 const LocationComponent = () => {
 
   const locationData = {
-    title: "119 Falling Ln, West Drayton",
-    subtitle: "Grill Shack",
-    mapQuery: "Grill Shack, 119 Falling Ln, West Drayton",
+    title: "648 S Main St, Los Angeles, CA",
+    subtitle: "Gumbo Boys",
+    mapQuery: "Gumbo Boys, 648 S Main St, Los Angeles, CA",
     contact: {
-      phone: "+44 1895 913672",
-      email: "info@grillshack.co.uk"
+      phone: "+1 (213) 910-2980",
+      email: "info@gumboboys.com"
     },
     openingTime: "Timing",
     extraInfo: "",
     actionLinkDirections: {
       text: "Get Directions",
-      url: "https://maps.google.com/?q=Grill Shack, 119 Falling Ln, West Drayton UB7 8AG, United Kingdom"
+      url: "https://maps.google.com/?q=Gumbo Boys, 648 S Main St, Los Angeles, CA"
     },
     actionLinkContact: {
       text: "Contact",
-      url: "https://maps.google.com/?q=Grill Shack, 119 Falling Ln, West Drayton UB7 8AG, United Kingdom"
+      url: "https://maps.google.com/?q=Gumbo Boys, 648 S Main St, Los Angeles, CA"
     },
     openingHours: [
-      { day: "Daily   -----------", hours: "11:30AM – 12AM" }
+      { day: "Sun - Thu", hours: "11:00 AM – 10:00 PM" },
+      { day: "Fri - Sat", hours: "11:00 AM – 12:00 AM" }
     ]
   };
 
   // Create the Google Maps embed URL
   const mapUrl = `https://maps.google.com/maps?q=${encodeURIComponent(locationData.mapQuery)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
-  
+
   return (
-  <div className="sm:mx-[70px] mx-0">
-  <h2 className="text-h2 mb-[32px] sm:text-left text-center">Our Location</h2>
+    <div className="sm:mx-[70px] mx-0">
+      <h2 className="text-h2 mb-[32px] sm:text-left text-center">Our Location</h2>
       <div className="relative">
         {/* Map Container */}
         <div className="w-full h-[400px] rounded-[14px] overflow-hidden bg-white border border-gray-500 location-map-container">

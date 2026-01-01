@@ -74,7 +74,7 @@ function Header({ onClick }: { onClick: () => void }) {
             />
             <Image
               src={logo}
-              alt="Grill Shack Logo"
+              alt="Gumbo Boys Logo"
               width={70}
               height={70}
               className="object-cover rounded-full"
@@ -86,7 +86,7 @@ function Header({ onClick }: { onClick: () => void }) {
         {/* Right Section */}
         <div className="flex justify-end w-full">
           <AnimatedCTAButton
-            buttonLeft={() => { router.push("tel:+1(843)-478-8609") }}
+            buttonLeft={() => { router.push("tel:+1(213)-910-2980") }}
             buttonRight={() => { router.push('/menu'); }}
           />
         </div>

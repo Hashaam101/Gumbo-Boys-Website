@@ -201,8 +201,8 @@ const ReviewPopup: React.FC<ReviewPopupProps> = ({ onClose, onSubmit }) => {
                 <button
                   key={star}
                   className={`text-3xl mx-1 transition-colors duration-150 ${(hoveredStar !== null ? star <= hoveredStar : rating && star <= rating)
-                      ? 'text-yellow-400'
-                      : 'text-gray-300'
+                    ? 'text-yellow-400'
+                    : 'text-gray-300'
                     }`}
                   onClick={() => handleStarClick(star)}
                   onMouseEnter={() => setHoveredStar(star)}
@@ -244,7 +244,7 @@ const ReviewPopup: React.FC<ReviewPopupProps> = ({ onClose, onSubmit }) => {
               maxLength={20}
             />
             {phoneError && <div className="text-xs text-red-600 mb-1">{phoneError}</div>}
-            <div className="mb-2 text-center text-sm text-gray-700">You can also call us at <a href="tel:843-478-8609" className="text-primary-dark font-bold">843-478-8609</a></div>
+            <div className="mb-2 text-center text-sm text-gray-700">You can also call us at <a href="tel:213-910-2980" className="text-primary-dark font-bold">213-910-2980</a></div>
             <button
               className="bg-primary-dark text-white px-4 py-2 rounded hover:bg-primary w-full"
               onClick={handleFeedbackSubmit}
